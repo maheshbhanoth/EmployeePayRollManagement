@@ -1,0 +1,70 @@
+<div class="container col-12 col-sm-8 mt-5">
+  <table class="table table-secondary table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Employee Id</th>
+        <th scope="col">Date </th>
+        <th scope="col">Check-In</th>
+        <th scope="col">Check-Out</th>
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let markedAttendance of MarkedAttendance" class="align-middle">
+        <td>{{ markedAttendance.id }}</td>
+        <td>{{ markedAttendance.employee_id }}</td>
+        <td>{{ markedAttendance.date }}</td>
+        <td>{{ markedAttendance.check_in }}</td>
+        <td>{{ markedAttendance.check_out }}</td>
+        <td>{{ markedAttendance.status }}</td>
+        <td>
+          <button class="btn btn-light me-2" (click)="updateAttendance(markedAttendance)">Update</button>
+          <button class="btn btn-danger ms-2" (click)="deleteattendance(markedAttendance.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="col-sm-12 col-6 form-floating" *ngIf="showForm">
+  <div class="shadow p-5 col-12 col-sm-6">
+    <h3 class="fw-bold">Update Attendance</h3>
+    <hr>
+    <form class="mt-3" [formGroup]="AttendanceForm"
+      style="background-color: rgb(43, 44, 44); padding: 20px; border-radius: 20px;">
+      <div class="mb-3 row">
+        <div class="col">
+          <label for="employeeId" class="form-label">Employee Id</label>
+          <input type="number" class="form-control" id="employeeId" formControlName="employee_id" readonly>
+        </div>
+      </div>
+      <div class="col">
+        <label for="id" class="form-label">Id</label>
+        <input type="number" class="form-control" id="id" formControlName="id" readonly>
+      </div>
+      <div class="mb-3">
+        <label for="date" class="form-label">Date</label>
+        <input type="date" class="form-control" id="date" formControlName="date">
+      </div>
+      <div class="mb-3">
+        <label for="check_in" class="form-label">Check_in</label>
+        <input type="text" class="form-control" id="check_in" formControlName="check_in">
+      </div>
+      <div class="mb-3">
+        <label for="check_out" class="form-label">Check_out</label>
+        <input type="text" class="form-control" id="check_out" formControlName="check_out">
+      </div>
+      <div class="mb-3">
+        <label for="status" class="form-label">Status</label>
+        <input type="text" class="form-control" id="status" formControlName="status">
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary mt-3 me-2" (click)="saveUpdatedAttendance()">Update Attendance</button>
+        <button type="submit" class="btn btn-danger mt-3 ms-2" (click)="closeForm()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>

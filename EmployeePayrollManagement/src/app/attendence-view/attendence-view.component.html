@@ -1,0 +1,20 @@
+<div class="container mt-5 col-10 col-sm-8">
+  <table class="table table-secondary table-striped">
+      <thead>
+          <th>id</th>
+          <th> date</th>
+          <th>checkin</th>
+          <th>checkout</th>
+          <th>status</th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let attendance of attendancedetails">
+              <td> {{attendance.id}}</td>
+              <td>{{attendance.date}}</td>
+              <td>{{attendance.check_in}}</td>
+              <td>{{attendance.check_out}}</td>
+              <td>{{attendance.status}}</td>
+          </tr>
+      </tbody>
+  </table>
+  </div>

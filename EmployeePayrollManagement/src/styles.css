@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+.styleLinks{
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  /* border-bottom: 1px dotted rgb(187, 0, 255); */
+}
+.styleLinks:hover{
+  border-bottom:2px solid red;
+  color:white;
+  background-color: black;
+  text-shadow: 2px 2px 4px rgba(242, 7, 7, 0.7);
+  font-weight: bold;
+  padding:6px 6px 6px 2px;
+  border-radius: 5px;
+}
+.navbar {
+  position: relative;
+  z-index: 1000; /* Adjust the z-index value as needed */
+  margin-bottom: 100px;
+}
+label{
+  font-weight: bold;
+  color:brown;
+}
+.signOut{
+  text-decoration: none;
+  color: black;
+}
+.signOut:hover{
+  border-bottom:2px solid red;
+  color:white;
+  background-color: black;
+  text-shadow: 2px 2px 4px rgba(242, 7, 7, 0.7);
+  font-weight: bold;
+  padding:6px 6px 6px 2px;
+  border-radius: 5px;
+}

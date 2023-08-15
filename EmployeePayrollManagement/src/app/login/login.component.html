@@ -1,0 +1,18 @@
+<div class="container col-10 col-sm-6 shadow pb-3 mt-5"
+  style="border-radius: 20px; background-image: url(https://as1.ftcdn.net/v2/jpg/02/85/32/68/1000_F_285326834_1hTVg1Pw6UI4LHyt8SwtIk3wuReBlmrc.jpg); background-repeat: no-repeat;  background-size: cover;  backdrop-filter: blur(2px);">
+  <h3 class="fw-bold text-center pt-2" style="color: crimson;">Login</h3>
+  <hr>
+  <form [formGroup]="loginForm" class="p-3 shadow" style="backdrop-filter: blur(0px); border-radius: 20px;">
+    <div class="mb-3 mt-3">
+      <label for="employeeId" class="form-label fw-bold">Employee Id</label>
+      <input type="number" class="form-control" id="employeeId" formControlName="employee_id">
+    </div>
+    <div class="mb-3 mt-5">
+      <label for="password" class="form-label">password</label>
+      <input type="password" class="form-control" id="password" formControlName="password">
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-outline-info mt-3 fw-bold text-danger lead" (click)="login()">Login</button>
+    </div>
+  </form>
+</div>

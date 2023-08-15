@@ -1,0 +1,25 @@
+<div class="container col-10 col-sm-6 shadow pb-3 mt-5"
+  style="border-radius: 20px; background-image: url(https://images.pexels.com/photos/206557/pexels-photo-206557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); background-repeat: no-repeat;  background-size: cover;  backdrop-filter: blur(2px)">
+  <h3 class="fw-bold text-center pt-2" style="color: crimson;">Register</h3>
+  <hr>
+  <form [formGroup]="registerForm" class="p-3 shadow" style="backdrop-filter: blur(3px); border-radius: 20px;">
+    <div class="mb-3">
+      <label for="employeeId" class="form-label fw-bold">Employee Id</label>
+      <input type="number" class="form-control" id="employeeId" formControlName="employee_id">
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">password</label>
+      <input type="password" class="form-control" id="password" formControlName="password">
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Confirm password</label>
+      <input type="password" class="form-control" id="password" formControlName="password">
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-outline-info mt-3 fw-bold text-danger lead" routerLink="/login" (click)="register()">Register</button>
+    </div>
+    <div class="text-center">
+      <span style="color: crimson;" class="pe-1">Already have an account?</span><a routerLink="/login">Sign in here</a>
+    </div>
+  </form>
+</div>

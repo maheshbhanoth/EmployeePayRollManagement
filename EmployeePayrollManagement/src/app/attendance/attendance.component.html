@@ -1,0 +1,30 @@
+<div class="container col-11 col-sm-8 shadow pb-3"
+  style="border-radius: 20px; background-image: url(https://images.pexels.com/photos/1308881/pexels-photo-1308881.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); background-repeat: no-repeat;  background-size: cover;  backdrop-filter: blur(20px)">
+  <h3 class="fw-bold text-center pt-2">Mark Attendance</h3>
+  <hr>
+  <form [formGroup]="AttendanceForm" class="p-3 shadow" style="backdrop-filter: blur(3px); border-radius: 20px;">
+    <div class="mb-3">
+      <label for="employeeId" class="form-label">Employee Id</label>
+      <input type="number" class="form-control" id="employeeId" formControlName="employee_id">
+    </div>
+    <div class="mb-3">
+      <label for="date" class="form-label">Date</label>
+      <input type="date" class="form-control" id="date" formControlName="date">
+    </div>
+    <div class="mb-3">
+      <label for="check_in" class="form-label">Check-In</label>
+      <input type="text" class="form-control" id="check_in" formControlName="check_in">
+    </div>
+    <div class="mb-3">
+      <label for="check_out" class="form-label">Check_out</label>
+      <input type="text" class="form-control" id="check_out" formControlName="check_out">
+    </div>
+    <div class="mb-3">
+      <label for="status" class="form-label">Attendance Status</label>
+      <input type="text" class="form-control" id="status" formControlName="status">
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-outline-warning mt-3 fw-bold text-danger lead" (click)="markAttendance()">Mark Attendance</button>
+    </div>
+  </form>
+</div>

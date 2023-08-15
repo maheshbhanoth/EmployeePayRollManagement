@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <h1>Employee List</h1>
+  <table class="table">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Category</th>
+              <th>Gender</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let employee of employees">
+              <td>{{ employee.id }}</td>
+              <td>{{ employee.name }}</td>
+              <td>{{ employee.mail_id }}</td>
+              <td>{{ employee.role }}</td>
+              <td>{{ employee.category }}</td>
+              <td>{{ employee.gender }}</td>
+              <td>
+                  <button (click)="updateEmployee(employee.id)" class="btn btn-info me-2">Update</button>
+                  <button (click)="deleteEmployee(employee.id)" class="btn btn-danger ms-1">Delete</button>             
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>

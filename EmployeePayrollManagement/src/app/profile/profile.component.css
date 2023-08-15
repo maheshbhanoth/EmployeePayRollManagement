@@ -1,0 +1,20 @@
+.profileImg {
+  width: 150px;
+  z-index: 1;
+}
+.about {
+  background-color: #f8f9fa;
+}
+.details {
+  margin-top: 130px;
+  margin-left: 20px;
+}
+
+.editButton {
+  z-index: 1;
+}
+
+.profileCon {
+  background-color: #000;
+  height: 200px;
+}

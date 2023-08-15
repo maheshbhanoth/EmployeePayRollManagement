@@ -1,0 +1,85 @@
+<section class="h-100 gradient-custom-2">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-9 col-xl-7">
+        <div class="card">
+          <div class="rounded-top text-white d-flex flex-row profileCon">
+            <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px">
+              <img
+                src="https://i.ibb.co/qpG8jG1/Screenshot-2023-08-09-093513.png"
+                alt="Generic placeholder image"
+                class="img-fluid img-thumbnail mt-4 mb-2 profileImg"
+              />
+              <button
+                type="button"
+                class="btn btn-outline-dark editButton"
+                data-mdb-ripple-color="dark"
+                (click)="editProfile()"
+              >
+                Edit profile
+              </button>
+            </div>
+            <div class="ms-3" class="details">
+              <h5>{{ employeeName }}</h5>
+              <p>{{ employeeId }}</p>
+            </div>
+          </div>
+          <div class="card-body p-4 text-black mt-4">
+            <div class="mb-5 mt-4">
+              <p class="lead fw-normal">About</p>
+              <div class="p-4" class="about">
+                <p class="font-italic mb-1">{{ department }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--update Profile-->
+
+<div class="container" *ngIf="isupdateEmployee">
+  <h1 class="lead">Update Employee</h1>
+  <form class="form" (ngSubmit)="updateEmployee()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Enter name"
+        [(ngModel)]="employee.name"
+        name="name"
+        #name="ngModel"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <select
+        class="form-control"
+        [(ngModel)]="employee.gender"
+        name="gender"
+        #gender="ngModel"
+      >
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="mailId">Mail Id:</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Enter Mail Id"
+        [(ngModel)]="employee.mail_id"
+        name="mailId"
+        #mailId="ngModel"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Edit Employee</button>
+  </form>
+</div>

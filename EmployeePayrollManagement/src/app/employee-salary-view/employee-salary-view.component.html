@@ -1,0 +1,114 @@
+<div>
+<div class="salarytableContainer container" *ngIf="!salarySlip">
+  <h1 class="lead">SalarySlips</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>salaryId</th>
+        <th>Employee Id</th>
+        <th>Salary</th>
+        <th>Salary credited Date</th>
+        <th>view</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of SalarySlipsList">
+        <td>
+          {{i.id}}
+        </td>
+        <td>
+          {{ i.employee_id }}
+        </td>
+        <td>
+          {{ i.amount }}
+        </td>
+        <td>{{ i.amount }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="viewSalarySlip(i.id)">
+            View Slips
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- 
+<!--  Download Salary slip       -->
+
+<div class="container" *ngIf="salarySlip">
+  <div class="button">
+    <button
+      type="button"
+      class="btn btn-primary btn1"
+      (click)="downloadPaySlip()"
+    >
+      Download Pay Slip
+    </button>
+
+    <button type="button" class="btn btn-info p-2" (click)="backButton()">
+      Back
+    </button>
+  </div>
+  <div class="alerts-container">
+    <!-- <p *ngFor="let alert of infoAlerts">
+      <ngb-alert [type]="alert.type" class="alert" (closed)="close(alert)">{{
+        alert.message
+      }}</ngb-alert>
+    </p> -->
+  </div> 
+
+  <div id="salarySlip" class="container con" *ngIf="salarySlip">
+    <div class="header">
+      <h1 class="p-2">Company</h1>
+      <h2>Salary Pay Slip</h2>
+    </div>
+    <div class="section">
+      <h3>Employee Information</h3>
+      <p><strong>Employee Name:</strong> {{ employeeName }}</p>
+      <p><strong>Employee ID:</strong> {{ salrayEmployeeId }}</p>
+      <p><strong>Department:</strong> {{ employeeCategory }}</p>
+    </div>
+    <div class="section">
+      <h3>Payment Details</h3>
+      <p><strong>Payment Date:</strong> {{ paymentDate }}</p>
+      <p><strong>Payment Method:</strong> Direct Deposit</p>
+    </div>
+    <div class="section">
+      <h3>Salary Breakdown</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Basic Salary</td>
+            <td>{{ basicSalary | currency }}</td>
+          </tr>
+
+          <tr>
+            <td>Taxes</td>
+            <td>{{ taxAmount | percent }}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Total:</td>
+            <td>{{ calculateTotal() | currency }}</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="section">
+      <p class="alert">
+        <strong>Note:</strong> This is a sample pay slip and may not reflect
+        actual payment details.
+      </p>
+    </div>
+    <div class="footer">
+      <p>&copy; 2023 Your Company. All rights reserved.</p>
+    </div>
+  </div>
+</div>

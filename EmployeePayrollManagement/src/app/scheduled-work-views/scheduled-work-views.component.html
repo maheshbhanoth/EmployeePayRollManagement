@@ -1,0 +1,24 @@
+<div class="container col-12 col-sm-8 mt-5 shadow p-4 pb-3" style="border-radius: 10px; background-color:lightyellow">
+  <h3>Scheduled Works</h3>
+  <hr>
+  <table class="table table-warning table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Date Assigned</th>
+        <th scope="col">Is Work Assigned</th>
+        <th scope="col">Work Description</th>
+        <th scope="col">Employee Id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let scheduledWork of WorkScheduled" class="align-middle">
+        <td>{{ scheduledWork.id }}</td>
+        <td>{{ scheduledWork.date_assigned }}</td>
+        <td>{{ scheduledWork.is_work_assigned }}</td>
+        <td>{{ scheduledWork.work_description }}</td>
+        <td>{{ scheduledWork.employee_id }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

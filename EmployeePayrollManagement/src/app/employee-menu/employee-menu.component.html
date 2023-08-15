@@ -1,0 +1,117 @@
+<nav class="navbar bg-body-tertiary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Employee Payroll Management</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#employeeMenuNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="employeeMenuNavbar" aria-labelledby="employeeMenuNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="employeeMenuNavbarLabel">Employee Payroll Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item mt-3">
+            <a class="nav-link" routerLink="profile" class="styleLinks">My Profile</a>
+          </li>
+          <li class="nav-item mt-3">
+            <a class="nav-link active" aria-current="page" routerLink="myLeaves" class="styleLinks">My Leaves</a>
+          </li>
+          <li class="nav-item mt-3">
+            <a class="nav-link" routerLink="viewAttendence" class="styleLinks">Attendence</a>
+          </li>
+          <li class="nav-item mt-3">
+            <a class="nav-link" routerLink="viewSalary" class="styleLinks">Salary</a>
+          </li>
+          <li class="nav-item mt-3">
+            <a class="nav-link" href="#" class="styleLinks">Timesheet</a>
+          </li>
+          <li class="nav-item mt-3">
+            <a class="nav-link" routerLink="viewScheduledWorks" routerLinkActive="active" class="styleLinks">Scheduled Works</a>
+          </li>
+          <li class="mt-3"><a *ngIf="isLoggedIn" routerLink="signOut" class="signOut">Sign out</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- <div class="con mt-0"></div>
+
+<div class="container">
+  <div class="row col-12">
+    <h1 class="text-center mt-4">About Payroll App</h1>
+
+    <div class="card col-12 m-2 missionCon">
+      <div class="card-body d-flex flex-row">
+        <div class="order-2 col-6">
+          <img
+            class=""
+            src="https://i.ibb.co/yWkg5bh/Screenshot-2023-08-09-144951.png"
+            alt="mission"
+          />
+        </div>
+        <div class="order-1 col-6">
+          <h2 class="mt-4">Our Mission</h2>
+          <p>
+            At Payroll App, our mission is to simplify and streamline payroll
+            management for businesses of all sizes. We understand that managing
+            employee salaries, benefits, and tax withholdings can be complex and
+            time-consuming. Our goal is to provide an intuitive and efficient
+            solution that empowers businesses to handle payroll tasks with ease.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card col-12 m-2">
+      <div class="card-body d-flex flex-row">
+        <div class="col-6">
+          <img
+            src="https://i.ibb.co/gMVVBNM/Screenshot-2023-08-09-150627.png"
+            alt="Screenshot-2023-08-09-150627"
+          />
+        </div>
+        <div class="col-6">
+          <h2 class="mt-4">Our Team</h2>
+          <p>
+            Meet the passionate individuals behind Payroll App. Our team brings
+            together a diverse range of expertise in software development,
+            finance, and business management. We're driven by a shared
+            commitment to revolutionizing the way businesses handle payroll.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card col-12">
+      <div class="card-body">
+        <h2 class="mt-4">Contact Us</h2>
+        <p>
+          We value your feedback and are here to address any inquiries you may
+          have. Feel free to reach out to our support team at
+          <a href="mailto:support@payrollapp.com">support@payrollapp.com</a>
+          or give us a call at <a href="tel:(123)456-7890">9898989898</a>.
+        </p>
+      </div>
+    </div>
+    <div class="card col-12">
+      <div class="card-body">
+        <p class="text-center mt-4">
+          Thank you for choosing Payroll App to simplify your payroll management
+          process!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer-->
+<!--
+<footer class="footer bg-dark text-white py-3">
+  <div class="container text-center">
+    <p>&copy; 2023 Payroll App. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  </div>
+</footer> -->
+
+<router-outlet></router-outlet>

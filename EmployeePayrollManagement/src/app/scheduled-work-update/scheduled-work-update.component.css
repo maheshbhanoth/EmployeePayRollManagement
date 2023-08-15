@@ -1,0 +1,13 @@
+/* Adjust form position */
+.form-floating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left:0;
+  padding: 15px;
+  background-color: rgba(247, 252, 252, 0.858);
+}

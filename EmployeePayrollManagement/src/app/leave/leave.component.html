@@ -1,0 +1,90 @@
+
+      
+      <div class="container col-6">
+        <h2>Leave Application</h2>
+         <form *ngIf="isEditMode" (ngSubmit)="updateLeave()">
+            
+            <div class="form-group">
+                <label for="employeeId">Employee ID</label>
+                <input type="text" id="employeeId" name="employeeId" [(ngModel)]="leave.employee_id" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="startDate">Start Date</label>
+                <input type="date" id="startDate" name="startDate" [(ngModel)]="leave.startDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="endDate">End Date</label>
+                <input type="date" id="endDate" name="endDate" [(ngModel)]="leave.endDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="reason">Reason</label>
+                <textarea id="reason" name="reason" [(ngModel)]="leave.reason" class="form-control" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="button" class="btn btn-secondary" (click)="cancelUpdate()">Cancel</button>
+        </form>
+
+        <form *ngIf="!isEditMode" (ngSubmit)="submitLeaveApplication()">
+            <!-- Create mode form -->
+            <div class="form-group">
+                <label for="employeeId">Employee ID</label>
+                <input type="text" id="employeeId" name="employeeId" [(ngModel)]="leave.employee_id" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="leaveType">Leave Type</label>
+                <input type="text" id="leaveType" name="leaveType" [(ngModel)]="leave.leaveType" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="startDate">Start Date</label>
+                <input type="date" id="startDate" name="startDate" [(ngModel)]="leave.startDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="endDate">End Date</label>
+                <input type="date" id="endDate" name="endDate" [(ngModel)]="leave.endDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="reason">Reason</label>
+                <textarea id="reason" name="reason" [(ngModel)]="leave.reason" class="form-control" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Apply</button>
+        </form>
+
+        <!-- Leave List with Delete Buttons -->
+        
+        
+        <h2 class="mt-5">Leave List</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Leave Type</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Reason</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let leaveItem of leaveList">
+                    <td>{{ leaveItem.employee_id}}</td>
+                    <td>{{ leaveItem.leaveType}}</td>
+                    <td>{{ leaveItem.startDate | date:'yyyy-MM-dd' }}</td>
+                    <td>{{ leaveItem.endDate | date:'yyyy-MM-dd' }}</td>
+                    <td>{{leaveItem.reason}}</td>
+                    <td>
+                        <button class="btn btn-danger" (click)="deleteLeave(leaveItem.id)">Delete</button>
+                        <button class="btn btn-primary" (click)="editLeave(leaveItem)">Edit</button>
+                    </td>
+                </tr>
+            </tbody>
+    
+        </table>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2023 Your Company. All rights reserved.</p>
+      </div>
+    

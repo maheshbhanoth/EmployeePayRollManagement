@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Leave List</h2>
+  <ul>
+    <li *ngFor="let leave of leaveList">
+      <strong>Employee ID:</strong> {{ leave.employee?.employeeId }}<br>
+      <strong>Leave Type:</strong> {{ leave.leaveType }}<br>
+      <strong>Start Date:</strong> {{ leave.startDate | date: 'mediumDate' }}<br>
+      <strong>End Date:</strong> {{ leave.endDate | date: 'mediumDate' }}<br>
+      <strong>Reason:</strong> {{ leave.reason }}<br><br>
+    </li>
+  </ul>
+</div>
+
+<div class="footer">
+  <p>&copy; 2023 Your Company. All rights reserved.</p>
+</div>

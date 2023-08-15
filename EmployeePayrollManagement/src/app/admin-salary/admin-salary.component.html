@@ -1,0 +1,126 @@
+<div class="d-flex flex-row justify-content-between">
+  <button type="button" class="btn btn-info m-4" (click)="addButton()">
+    Add Salary
+  </button>
+
+  <button type="button" routerLink="/adminMenu" class="btn btn-info m-4">
+    back
+  </button>
+</div>
+<div class="container" *ngIf="!salaryTable">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Salary Id</th>
+        <th>employee Id</th>
+        <th>Salary</th>
+        <th>Credited Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of salaryDetailsList">
+        <td>{{ i.id }}</td>
+        <td>{{ i.employee_id }}</td>
+        <td>{{ i.amount }}</td>
+        <td>{{ i.salary_credited_date }}</td>
+        <td>
+          <button type="button" class="btn btn-info m-1" (click)="update(i.id)">
+            Update
+          </button>
+          <button type="button" class="btn btn-info m-1" (click)="delete(i.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!--update Salary-->
+
+<div class="container" *ngIf="isupdateSalary">
+  <h2 class="lead">Update Salary</h2>
+  <form class="form">
+    <div class="form-group">
+      <label for="">Employee Id</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Enter Emplyee Id"
+        name="employeeId"
+        [(ngModel)]="employeeId"
+        readonly
+      />
+    </div>
+    <div class="form-group">
+      <label for="">Salary</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Enter Salary"
+        name="salary"
+        [(ngModel)]="salary"
+        required
+      />
+    </div>
+    <div>
+      <label for="">Date</label>
+      <input
+        class="form-control"
+        type="date"
+        placeholder="Enter Salary"
+        name="date"
+        [(ngModel)]="date"
+        required
+      />
+    </div>
+    <button type="button" class="btn btn-info" (click)="updateSalary()">
+      Update Salary
+    </button>
+  </form>
+</div>
+
+<!--SalaryADD-->
+
+<div class="container" *ngIf="isAddSalary">
+  <h2 class="lead">Add Salary</h2>
+  <form class="form">
+    <div class="form-group">
+      <label for="">Employee Id</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Enter Emplyee Id"
+        name="employeeId"
+        [(ngModel)]="employeeId"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="">Salary</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Enter Salary"
+        name="salary"
+        [(ngModel)]="salary"
+        required
+      />
+    </div>
+    <div>
+      <label for="">Date</label>
+      <input
+        class="form-control"
+        type="date"
+        placeholder="Enter Salary"
+        name="date"
+        [(ngModel)]="date"
+        required
+      />
+    </div>
+    <button type="button" class="btn btn-info" (click)="addSalary()">
+      Add Salary
+    </button>
+  </form>
+</div>
